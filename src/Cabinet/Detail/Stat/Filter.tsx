@@ -232,29 +232,29 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                     <fieldset>
                         <div className='filter__period'>
                             <legend className="sr-only">Период статистики</legend>
-                            <div className="btn-group mb-2" role="radiogroup" aria-label="установить промежуток статистики. Доступен выбор: сегодня, неделю, месяц, произвольный период">
-                                <label className={'btn btn-info form-check-label btn-sm' + (this.state.isDay && !this.state.periodShowed?' active':'')}>
+                            <div className="btn-group mb-2 mr-2" role="radiogroup" aria-label="установить промежуток статистики. Доступен выбор: сегодня, неделю, месяц, произвольный период">
+                                <label className={'filter__period-button btn btn-info form-check-label btn-sm' + (this.state.isDay && !this.state.periodShowed?' active':'')}>
                                     <input id='periodByDay' type='radio' name='period' value='day'
                                         className='form-check-input'
                                         aria-label="статистика за сегодня"
                                         onChange={this.setDayRange}
                                         checked={this.state.isDay && !this.state.periodShowed} />сегодня
                                 </label>
-                                <label className={'btn btn-info form-check-label btn-sm' + (this.state.isWeek && !this.state.periodShowed?' active':'')}>
+                                <label className={'filter__period-button btn btn-info form-check-label btn-sm' + (this.state.isWeek && !this.state.periodShowed?' active':'')}>
                                     <input id='periodByWeek' type='radio' name='period' value='week'
                                         className='form-check-input'
                                         aria-label="статистика за неделю"
                                         onChange={this.setWeekRange}
                                         checked={this.state.isWeek && !this.state.periodShowed} />неделя
                                 </label>
-                                <label className={'btn btn-info form-check-label btn-sm' + (this.state.isMonth && !this.state.periodShowed?' active':'')}>
+                                <label className={'filter__period-button btn btn-info form-check-label btn-sm' + (this.state.isMonth && !this.state.periodShowed?' active':'')}>
                                     <input id='periodByMonth' type='radio' name='period' value='month'
                                         className='form-check-input'
                                         aria-label="статистика за месяц"
                                         onChange={this.setMonthRange}
                                         checked={this.state.isMonth && !this.state.periodShowed} />месяц
                                 </label>
-                                <label className={'btn btn-info form-check-label btn-sm' + 
+                                <label className={'filter__period-button btn btn-info form-check-label btn-sm' + 
                                 (this.state.periodShowed || (!this.state.isDay && !this.state.isWeek && !this.state.isMonth) ?' active':'')}>
                                     <input id='periodByPeriod' type='radio' name='period' value='period'
                                         className='form-check-input'
@@ -412,7 +412,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                 </div>
                 <footer className='card-footer'>
                     <button type="button" className="btn btn-primary" onClick={this.saveFilter}>Сохранить</button>
-                    <button type="button" className="btn btn-light" onClick={this.cancel}>Закрыть</button>
+                    <button type="button" className="btn btn-light" onClick={this.cancel}>Отмена</button>
                 </footer>
             </form>
         )

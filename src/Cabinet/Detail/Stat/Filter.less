@@ -4,31 +4,14 @@
     background: #fff1f1;
 }
 
+@media screen and (max-width: @gridwidth) {
+    .filter__period-button {
+        padding: .5rem 1.28rem !important;
+    }
+}
 @supports (grid-area: auto) {
     @media screen and (min-width: @gridwidth) {
-        /*.filter {
-            display: grid;
-            grid-template-columns: [start] 1fr 1fr [end];
-            grid-template-rows: [header-start] 1fr [header-end] auto [footer-start] 1fr [footer-end];
-            grid-template-areas: "head head"
-                                "set1 set3"
-                                "foot foot";
-        }
-
-        .filter > :nth-child(1) {
-            grid-column-start: head-start;
-            grid-column-end: head-end;
-            grid-row-start: header-start;
-            grid-row-end: header-end;
-        }
-
-        .filter > :nth-child(4) {
-            grid-column-start: foot-start;
-            grid-column-end: foot-end;
-            grid-row-start: footer-start;
-            grid-row-end: footer-end;
-        }*/
-
+        
         .filter {
             position: absolute;
             right: 0;
