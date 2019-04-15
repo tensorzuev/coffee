@@ -10,7 +10,7 @@ export function BodyRouter() {
                         <div>
                             Разводящая страница в разработке.
                             <br />
-                            Перейдите к <NavLink to='/main/list'>списку</NavLink> или сразу к <NavLink to='/detail/0'>информации о кофе-машине</NavLink>
+                            Перейдите к <NavLink to='/main/list'>списку</NavLink> или сразу к <NavLink to='/detail/0/stat'>информации о кофе-машине</NavLink>
                         </div>} />
             <Route path='/main/list' component={Machines} />
             <Route path='/main/appeal' render={() => <div>APPEaK</div>} />

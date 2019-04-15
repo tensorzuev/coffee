@@ -1,5 +1,11 @@
-.site__header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+@import './../theme.less';
+
+@supports (grid-area: auto) {
+    @media screen and (min-width: @gridwidth) {
+        .site__header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+        }
+    }
 }

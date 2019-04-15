@@ -290,7 +290,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                                 : ''}
 
                             
-                            <div className='btn-group mr-4' role="radiogroup" aria-label="доступен выбор по часам или дням">
+                            <div className='btn-group mr-2' role="radiogroup" aria-label="доступен выбор по часам или дням">
                                 <label className={'btn btn-info form-check-label btn-sm' + ((this.props.filter.groupBy === 1)?' active':'')}>
                                     <input id='groupByHour' type='radio' name='groupBy' value='1'
                                         className='form-check-input'
