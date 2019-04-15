@@ -232,7 +232,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                     <fieldset>
                         <div className='filter__period'>
                             <legend className="sr-only">Период статистики</legend>
-                            <div className="btn-group" role="radiogroup" aria-label="установить промежуток статистики. Доступен выбор: сегодня, неделю, месяц, произвольный период">
+                            <div className="btn-group mb-2" role="radiogroup" aria-label="установить промежуток статистики. Доступен выбор: сегодня, неделю, месяц, произвольный период">
                                 <label className={'btn btn-info form-check-label btn-sm' + (this.state.isDay && !this.state.periodShowed?' active':'')}>
                                     <input id='periodByDay' type='radio' name='period' value='day'
                                         className='form-check-input'
@@ -290,7 +290,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                                 : ''}
 
                             
-                            <div className='btn-group mr-2' role="radiogroup" aria-label="доступен выбор по часам или дням">
+                            <div className='btn-group mr-2 mb-2' role="radiogroup" aria-label="доступен выбор по часам или дням">
                                 <label className={'btn btn-info form-check-label btn-sm' + ((this.props.filter.groupBy === 1)?' active':'')}>
                                     <input id='groupByHour' type='radio' name='groupBy' value='1'
                                         className='form-check-input'
@@ -304,7 +304,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                                         checked={this.props.filter.groupBy === 24} /> по&nbsp;дням
                                 </label>
                             </div>
-                            <div className='btn-group'>
+                            <div className='btn-group mb-2'>
                                 {this.getButton()}
                             </div>
                         </div>
@@ -411,8 +411,8 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
                     </fieldset>
                 </div>
                 <footer className='card-footer'>
-                    <button type="button" className="btn btn-primary" onClick={this.saveFilter}>Сохранить фильтр</button>
-                    <button type="button" className="btn btn-light" onClick={this.cancel}>Не применять</button>
+                    <button type="button" className="btn btn-primary" onClick={this.saveFilter}>Сохранить</button>
+                    <button type="button" className="btn btn-light" onClick={this.cancel}>Закрыть</button>
                 </footer>
             </form>
         )
