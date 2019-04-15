@@ -1,0 +1,43 @@
+@import './theme.less';
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+.site {
+    height: 100%;
+}
+
+@supports (grid-area: auto) {
+    @media screen and (min-width: @gridwidth) {
+        body {
+            display: grid;
+        }
+        
+        main {
+            border-left: 1px solid rgba(0,0,0,.1);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+        }
+
+        .site {
+            display: grid;
+            grid-template-columns: [start] 1fr 4fr [end];
+            grid-template-rows: minmax(calc(100% - 50px), auto) 50px;
+            grid-template-areas: "menu main"
+                                "footer footer";
+        }
+
+        .site__footer { 
+            grid-area: footer; 
+            text-align: center;
+        }
+    }
+}

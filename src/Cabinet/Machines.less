@@ -1,0 +1,19 @@
+@import './theme.less';
+
+.list__row-wrapper:hover > .list__grid-column {
+    background: #e0e0e0;
+}
+
+@supports (grid-area: auto) {
+    @media screen and (min-width: @gridwidth) {
+        .list {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1fr;
+
+        }
+
+        .list__row-wrapper {
+            display: contents;
+        }
+    }
+}
