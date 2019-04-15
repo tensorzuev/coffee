@@ -65,7 +65,9 @@ export class Header extends React.Component<{items:IMenuItem[]}, IHeaderState> {
                         type="button"
                         aria-controls="main-menu-content" 
                         aria-expanded="true" 
-                        aria-label="Развернуть меню сайта"><span className="navbar-toggler-icon"></span></button>
+                        aria-label="Развернуть меню сайта">
+                        <div className={"animated-icon1" + (this.state.menuShow ? ' open':'')}><span></span><span></span><span></span></div>
+                    </button>
 
                     <div className={'collapse navbar-collapse collapse' + (this.state.menuShow ? ' show':'')} id="main-menu-content">
                         <ul className="navbar-nav mr-auto">        

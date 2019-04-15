@@ -43,9 +43,9 @@ export class Detail extends React.Component<any, IDetailInterface> {
                 (this.state.info.status ? 'в сети':'в режиме энергосбережения')}. Сегодня сварено {this.state.info.countCup} чашек кофе.</p>
                 <p>Здесь будет текст, с описанием того, как машина работала за последний месяц. Назовем этот текст "сводка"</p>
                 <p>Преложим скачать отчеты о работе машины:</p>
-                <button type='button' className='btn btn-light'>За последний месяц.pdf</button> 
-                <button type='button' className='btn btn-light'>За последнюю неделю.pdf</button> 
-                <button type='button' className='btn btn-light'>За вчера (дата).pdf</button> 
+                <button type='button' className='btn btn-light detail__download-button'>За последний месяц.pdf</button> 
+                <button type='button' className='btn btn-light detail__download-button'>За последнюю неделю.pdf</button> 
+                <button type='button' className='btn btn-light detail__download-button'>За вчера (дата).pdf</button> 
             </article>
             <hr />
         </React.Fragment>)
