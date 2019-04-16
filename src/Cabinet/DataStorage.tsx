@@ -127,17 +127,18 @@ const StatsData:{[propertyname:number]:IDataList} = {
         data: {
             series: [
                 {
-                    legend: 'от 15 до 20',
-                    data: [0, 0, 5, 9, 12, 10, 3]
+                    legend: 'от 14 до 19',
+                    data: [0, 0, 5, 9, 12, 10, 3, 5, 6, 9, 1, 3]
                 },
                 {
-                    legend: 'от 20 до 30',
-                    data: [0, 3, 10, 16, 22, 17, 10]
+                    legend: 'от 19 до 30',
+                    data: [0, 3, 10, 16, 22, 17, 10, 12, 15, 24, 9, 2]
                 }
             ],
             minValue: 0,
             maxValue: 25,
-            xAxis: [ '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00']
+            xAxis: [ '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00',
+                     '14:00', '15:00', '16:00', '17:00', '18:00']
         },
         filter: {
             periodStart: new Date('2019-03-15'),
@@ -158,9 +159,7 @@ const StatsData:{[propertyname:number]:IDataList} = {
 const DataStorage = {
     getMenu(currentPath:string):Promise<IMenuItem[]> {
         return new Promise((resolve) => {
-            setTimeout(()=>{
-                resolve(dataMenu[currentPath]);
-            }, 500 + Math.random() * 2000);
+            resolve(dataMenu[currentPath]);
         });
     },
 

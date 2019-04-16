@@ -112,9 +112,8 @@ export class Stat extends React.Component<any, IStatState> {
         data.addRows(rows);
 
         this.chartOptions = {
-            title: 'Статистика по количество сваренного кофе',
+            title: 'Статистика по количеству сваренного кофе',
             colors: colors,
-            width: 'auto',
             hAxis: {
                 title: 'Количество варок за ',
                 format: '',
@@ -124,7 +123,7 @@ export class Stat extends React.Component<any, IStatState> {
                 }
             },
             vAxis: {
-                title: 'ТЕкст'
+                title: 'Время варки'
             }
         };
 
@@ -146,6 +145,15 @@ export class Stat extends React.Component<any, IStatState> {
                 this.chartControl = chart;
             } 
             this.rebuidChart();
+
+            //I have to change chart library. Need something with style customization
+            let allText = this.chartControl.getContainer().getElementsByTagName('text');
+            for (let i=0; i < allText.length; i++) {
+                allText[i].setAttribute('font-family', '');
+                allText[i].setAttribute('font-size', '');
+                allText[i].setAttribute('font-style', '');
+                allText[i].setAttribute('font-weight', '');
+            }
         }
     }
 
