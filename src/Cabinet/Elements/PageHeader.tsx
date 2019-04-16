@@ -9,7 +9,7 @@ interface IPageHeaderProps {
 
 export function PageHeader(props:IPageHeaderProps) {
     return (
-        <div className='site__header card-header btn-dark' aria-live='polite'>
+        <div className='site__header card-header' aria-live='polite'>
             <h1>{props.title}</h1> 
             {props.additionalContent ? props.additionalContent : ''}
         </div>

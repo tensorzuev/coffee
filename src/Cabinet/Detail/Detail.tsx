@@ -32,7 +32,7 @@ export class Detail extends React.Component<any, IDetailInterface> {
                     aria-controls='machine-information' 
                     aria-expanded={this.state.showFull} 
                     aria-label={(this.state.showFull?'скрыть':'показать') + ' сводную информацию о кофе-машине по адресу ' + this.state.info.address}
-                    className='btn btn-outline-info waves-effect btn-sm card-header__button'>{this.state.showFull?'скрыть':'показать'} сводку</button>
+                    className={'btn waves-effect btn-sm card-header__button btn-outline-' + (this.state.showFull ? 'success' : 'info')}>{this.state.showFull?'скрыть':'показать'} сводку</button>
         )
     }
 

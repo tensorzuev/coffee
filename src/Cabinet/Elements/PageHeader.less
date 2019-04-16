@@ -1,5 +1,10 @@
 @import './../theme.less';
 
+.site__header {
+    background-color: #212121 !important;
+    color: #fff;
+}
+
 @supports (grid-area: auto) {
     @media screen and (min-width: @gridwidth) {
         .site__header {
@@ -7,5 +12,27 @@
             grid-template-columns: 1fr auto;
             align-items: center;
         }
+    }
+}
+
+
+.site__header {
+    .btn:active {
+        -webkit-box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.18), 0 4px 15px 0 rgba(255, 255, 255, 0.15) inset !important;
+        box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.18), 0 4px 15px 0 rgba(255, 255, 255, 0.15) inset !important;
+        outline: 0;
+    }
+
+
+    .btn:focus {
+        -webkit-box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.18), 0 4px 15px 0 rgba(255, 255, 255, 0.15);
+        box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.18), 0 4px 15px 0 rgba(255, 255, 255, 0.15);
+        outline: 0;
+    }
+
+    .btn:hover {
+        -webkit-box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.3), 0 4px 15px 0 rgba(255, 255, 255, 0.25);
+        box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.3), 0 4px 15px 0 rgba(255, 255, 255, 0.25);
+        outline: 0;
     }
 }

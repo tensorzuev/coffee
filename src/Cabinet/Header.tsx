@@ -30,8 +30,8 @@ function GenerateLink(item: IMenuItem) {
 
     return (
         <li key={item.key} className={'nav-item' + (current? ' active':'')}>
-            <NavLink to={item.path} 
-                className='nav-link'>{item.title} {current ? <span className="sr-only">(current)</span> : ''}</NavLink>
+            <NavLink to={item.path} aria-selected={current ? true : false}
+                className='nav-link header__item_padding'>{item.title} {current ? <span className="sr-only">(current)</span> : ''}</NavLink>
         </li>
     );
 }

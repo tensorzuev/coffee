@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IFilterStat, IInterval } from '../../DataStorage';
 import './Filter.less';
 import {default as Button} from '@material-ui/core/Button';
+import { Spinner } from '../../Elements/Spinner';
 
 interface IFilterState {
     editMode: boolean,
@@ -181,6 +182,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
             cookingDuration: this.props.filter.intervals.slice(),
             filterDump: filterDump
         });
+
     }
 
     cancel(ev:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -200,7 +202,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
         if (this.props.filter) {
             return (<button type="button" 
                 aria-label="открыть панель с дополнительными настройками"    
-                className="btn btn-outline-info waves-effect btn-sm" onClick={this.changeEditMode}>настроить</button>);
+                className={'btn waves-effect btn-sm btn-outline-' + (this.state.editMode ? 'success':'info')} onClick={this.changeEditMode}>настроить</button>);
         } else {
             return ('');
         }
@@ -219,11 +221,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
 
     getFilterPresentation() {
         if (!this.props.filter) {
-            return (<div>
-                <div className='spinner-grow' role='status'>
-                    <span className='sr-only'>Информация о машине в процессе получения...</span>
-                </div>
-            </div>);
+            return (<Spinner />);
         } else {
             //tODO: посчитать активную кнопку
             
