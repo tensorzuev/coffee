@@ -115,7 +115,7 @@ export class Stat extends React.Component<any, IStatState> {
             title: 'Статистика по количеству сваренного кофе',
             colors: colors,
             hAxis: {
-                title: 'Количество варок за ',
+                title: 'Период показаний',
                 format: '',
                 viewWindow: {
                     min: [0, 0, 0],

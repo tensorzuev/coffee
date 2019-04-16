@@ -366,7 +366,7 @@ export class Filter extends React.Component<IFilterProps, IFilterState> {
         const durations = this.state.cookingDuration.map((el)=>{
             let bindedFn = this.deleteOneInterval.bind(this, el);
             const dur = `${el.start} - ${el.end} секунд`;
-            return (<li className='list-group-item' key={i++}><span id={`period-of-time-${i}`}>{dur}</span><button 
+            return (<li className='list-group-item filter__interval-row' key={i++}><span id={`period-of-time-${i}`}>{dur}</span><button 
                     aria-controls={`period-of-time-${i}`}
                     aria-label={`удалить промежуток варки ${dur}`}
                     type="button" 
