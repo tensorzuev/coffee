@@ -131,6 +131,15 @@ export class Stat extends React.Component<any, IStatState> {
         this.chartData = data;
         
         this.chartControl.draw(this.chartData, this.chartOptions);
+
+        //I have to change chart library. Need something with style customization
+        let allText = this.chartControl.getContainer().getElementsByTagName('text');
+        for (let i=0; i < allText.length; i++) {
+            allText[i].setAttribute('font-family', '');
+            allText[i].setAttribute('font-size', '');
+            allText[i].setAttribute('font-style', '');
+            allText[i].setAttribute('font-weight', '');
+        }
     }
 
     componentDidUpdate(prevProps:any, prevState:IStatState) {
@@ -145,15 +154,6 @@ export class Stat extends React.Component<any, IStatState> {
                 this.chartControl = chart;
             } 
             this.rebuidChart();
-
-            //I have to change chart library. Need something with style customization
-            let allText = this.chartControl.getContainer().getElementsByTagName('text');
-            for (let i=0; i < allText.length; i++) {
-                allText[i].setAttribute('font-family', '');
-                allText[i].setAttribute('font-size', '');
-                allText[i].setAttribute('font-style', '');
-                allText[i].setAttribute('font-weight', '');
-            }
         }
     }
 
