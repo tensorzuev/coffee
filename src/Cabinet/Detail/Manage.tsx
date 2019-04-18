@@ -1,4 +1,4 @@
-import * as React from 'React';
+import * as React from 'react';
 import { BasicPage } from '../Elements/BasicPage';
 import { Panel } from './Manage/Panel';
 
