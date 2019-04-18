@@ -5,6 +5,7 @@ import { DataStorage, IMachineInfo } from '../DataStorage';
 import './Detail.less';
 import { PageHeader } from '../Elements/PageHeader';
 import { Spinner } from '../Elements/Spinner';
+import { Manage } from './Manage';
 
 interface IDetailInterface {
     info: IMachineInfo,
@@ -73,6 +74,7 @@ export class Detail extends React.Component<any, IDetailInterface> {
             <section>
                 {this.getInfo()}
                 <Route path='/detail/:id/stat' component={Stat} />
+                <Route path='/detail/:id/manage' component={Manage} />
             </section>
         )
     }

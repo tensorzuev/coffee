@@ -13,8 +13,20 @@ export class MenuLoader extends React.Component<any, IMenuLoaderState> {
         return props.match && props.match.params && props.match.params.section || 'main';
     }
 
+    
+
     loadMenu() {
         return DataStorage.getMenu(this.getIdFromProps(this.props)).then((menuData) => {
+            menuData.forEach((el) => {
+                let menuPath = el.path.split('/');
+                let locationPath = location.pathname.split('/');
+                menuPath.forEach((one, ind) => {
+                    if (one && one[0]===':') {
+                        menuPath[ind] = locationPath[ind];
+                    }
+                })
+                el.path = menuPath.join('/');
+            });
             this.setState({
                 menu: menuData
             });

@@ -61,23 +61,28 @@ const dataMenu:{[propertyname:string]:IMenuItem[]} = {
         },
         {
             title: 'Статистика',
-            path: 'stat',
+            path: '/detail/:id/stat',
             key: 'det2'
         }, 
         {
             title: 'Настройки',
-            path: 'settings',
+            path: '/detail/:id/settings',
             key: 'det3'
         }, 
         {
             title: 'История ошибок',
-            path: 'errors',
+            path: '/detail/:id/errors',
             key: 'det4'
         }, 
         {
             title: 'Обращения',
-            path: 'appeal',
+            path: '/detail/:id/appeal',
             key: 'det5'
+        }, 
+        {
+            title: 'Управлять',
+            path: '/detail/:id/manage',
+            key: 'det6'
         }
     ]
 }

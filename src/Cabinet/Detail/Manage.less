@@ -1,0 +1,17 @@
+@import './../theme.less';
+
+//save proportion and on phone screen we will see fullscreen manager panel
+.manager-panel {
+    display: grid;
+    width: 100%;
+    height: 56vw;
+    border: 5px solid #343a40;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: @gridwidth) {
+    .manager-panel {
+        width: 500px;
+        height: 292px;  
+    }
+}

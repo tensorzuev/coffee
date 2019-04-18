@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Filter } from './Stat/Filter';
 import { IFilterStat, DataStorage, IStatList } from '../DataStorage';
 import './Stat.less';
+import { BasicPage } from '../Elements/BasicPage';
 
 const ChartColors = [
     '#007bff',
@@ -47,12 +48,15 @@ export class Stat extends React.Component<any, IStatState> {
     }
 
     componentDidMount() {
-        //@ts-ignore
-        google.charts.load('current', {packages: ['corechart', 'bar']});
-        //@ts-ignore
-        google.charts.setOnLoadCallback(()=>{
-            this.setState({libraryReady:true});
-        });
+        //@ts-ignore 
+        if (window.google && window.google.charts) {
+            //@ts-ignore
+            google.charts.load('current', {packages: ['corechart', 'bar']});
+            //@ts-ignore
+            google.charts.setOnLoadCallback(()=>{
+                this.setState({libraryReady:true});
+            });
+        }
 
         DataStorage.getStats(this.props.match.params.id, null).then((stats)=>{
             this.setState({filter:stats.filter,
@@ -159,11 +163,12 @@ export class Stat extends React.Component<any, IStatState> {
 
     render() {
         return (
-            <section className='card-body'>
-                <h2 className='card-title'>Статистика кофе-машины</h2>
-                <Filter filter={this.state.filter} filterChangeCallback={this.filterChangeCallback}/>
-                <div id="stats__chart-bar" className="stat__chart"></div>
-            </section>
+            <BasicPage title='Статистика кофе-машины' content={
+                <React.Fragment>
+                    <Filter filter={this.state.filter} filterChangeCallback={this.filterChangeCallback}/>
+                    <div id="stats__chart-bar" className="stat__chart"></div>
+                </React.Fragment>
+            }/>
         )
     }
     
