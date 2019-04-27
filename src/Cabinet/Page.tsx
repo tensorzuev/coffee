@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { IMenuItem, DataStorage } from './DataStorage';
 import { BodyRouter } from './BodyRouter';
 
+import './bootstrap-fix.less';
 import './Page.less';
 import { MenuLoader } from './MenuLoader';
 
